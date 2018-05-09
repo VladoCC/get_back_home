@@ -1,0 +1,16 @@
+[
+{
+  "modid": "GetBackToHome",
+  "name": "Get Back to Home",
+  "description": "This mod gives you ability to set your home point and teleport to it in cost of hunger",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["vladocc"],
+  "credits": "The Forge and FML guys, for their great mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["required-after:AppleCore;after:hungeroverhaul;after:SpiceOfLife;"]
+}
+]

@@ -20,7 +20,7 @@ import squeek.applecore.api.hunger.ExhaustionEvent;
 
 import java.util.concurrent.Callable;
 
-@Mod(modid = ModInfo.MODID, name = ModInfo.NAME, version = ModInfo.VERSION, dependencies = "required-after:AppleCore;after:hungeroverhaul;after:SpiceOfLife;")
+@Mod(modid = ModInfo.MODID, name = ModInfo.NAME, version = ModInfo.VERSION, dependencies = "required-after:applecore;after:hungeroverhaul;after:spiceoflife;")
 public class GetBackToHome
 {
     private static Logger logger;

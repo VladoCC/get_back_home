@@ -57,6 +57,10 @@ public class ModConfig {
     @Config.Name("teleport_in_fall")
     public static boolean teleportInFall = false;
 
+    @Config.Comment("If this is false, you can teleport only if no mobs in 5 meter radius near you")
+    @Config.Name("teleport_near_monster")
+    public static boolean nearMonster = false;
+
     @Config.Comment({"Delaying control:",
             "   0 - No delay before teleportation",
             "   1 - 3 seconds delay before teleportation",

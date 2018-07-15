@@ -31,13 +31,13 @@ public class ModConfig {
     @Config.Comment({"Cost of horizontal move for one block",
             "Default: 0.1"})
     @Config.Name("cost_for_one_meter_horizontally")
-    @Config.RangeDouble(min = 0.001, max = 10)
+    @Config.RangeDouble(min = 0, max = 10)
     public static double runCost = 0.1;
 
     @Config.Comment({"Cost of jump up for one block",
             "Default: 0.2"})
     @Config.Name("cost_for_one_meter_up")
-    @Config.RangeDouble(min = 0.001, max = 10)
+    @Config.RangeDouble(min = 0, max = 10)
     public static double jumpCost = 0.2;
 
     @Config.Comment({"Cost of fall for one block",
@@ -69,4 +69,16 @@ public class ModConfig {
     @Config.Name("delaying")
     @Config.RangeInt(min = 0, max = 2)
     public static int delaying = 0;
+
+    @Config.Comment({"If this is true, when you are mounted and teleporting to home, you will be teleported with your mount.",
+            "If this is false you will be dismounted",
+            "Default: true"})
+    @Config.Name("teleport_with_mount")
+    public static boolean onMount = false;
+
+    @Config.Comment({"Cost of your teleportation will be multiplied by this number, if you are mounted and teleporting with your mount",
+            "Default: 2.0"})
+    @Config.Name("cost_on_mount_multiplier")
+    @Config.RangeDouble(min = 1.0, max = 100)
+    public static double multMountCost = 2.0;
 }

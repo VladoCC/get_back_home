@@ -26,6 +26,7 @@ public class HomeController {
     public static final float EXHAUSTION_JUMP = (float) ModConfig.jumpCost;
     public static final float EXHAUSTION_FALL = (float) ModConfig.fallCost;
     public static final float EXHAUSTION_MULTIPLIER = (float) ModConfig.multCost;
+    public static final float MOUNT_MULTIPLIER = (float) ModConfig.multMountCost;
 
     public static void setHome(Entity entity, double x, double y, double z, int world){
         if (entity instanceof EntityPlayer) {
@@ -100,6 +101,9 @@ public class HomeController {
                                 int fallHeight = Math.max(0, player.getPosition().getY() - info.getY());
                                 float exhaustion = flatDistance * EXHAUSTION_SPRINT + jumpHeight * EXHAUSTION_JUMP + fallHeight * EXHAUSTION_FALL;
                                 exhaustion *= EXHAUSTION_MULTIPLIER;
+                                if (player.isRiding() && ModConfig.onMount){
+                                    exhaustion *= MOUNT_MULTIPLIER;
+                                }
                                 float maxExhaustion = mutator.getMaxExhaustion(player);
                                 float food = player.getFoodStats().getFoodLevel() * maxExhaustion;
                                 float saturation = player.getFoodStats().getSaturationLevel() * maxExhaustion;
@@ -150,6 +154,13 @@ public class HomeController {
                                         player.getFoodStats().setFoodSaturationLevel(saturation);
                                     } else {
                                         mutator.setExhaustion(player, exhaustion + mutator.getExhaustion(player));
+                                    }
+                                    if (player.isRiding()) {
+                                        if (ModConfig.onMount) {
+                                            player.getRidingEntity().setPositionAndUpdate(info.getX() + 0.5, info.getY() + 0.5, info.getZ() + 0.5);
+                                        } else {
+                                            player.dismountRidingEntity();
+                                        }
                                     }
                                     player.setPositionAndUpdate(info.getX() + 0.5, info.getY() + 0.5, info.getZ() + 0.5);
                                     player.sendMessage(new TextComponentString("Home, sweet home!"));

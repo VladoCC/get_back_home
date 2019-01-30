@@ -38,19 +38,20 @@ public class HomeController {
 
     public static void setHome(Entity entity){
         BlockPos pos = entity.getPosition();
-        setHome(entity, pos.getX(), pos.getY(), pos.getZ(), entity.getEntityWorld().getWorldType().getId());
+        setHome(entity, pos.getX(), pos.getY(), pos.getZ(), entity.dimension);
     }
 
     public static void setHomeOnBed(Entity entity){
         EntityPlayer player = (EntityPlayer) entity;
         BlockPos pos = player.bedLocation;
-        setHome(entity, pos.getX(), pos.getY() + 1, pos.getZ(), entity.getEntityWorld().getWorldType().getId());
+        setHome(entity, pos.getX(), pos.getY() + 1, pos.getZ(), entity.dimension);
     }
 
     public static void moveBackHome(Entity entity){
         if (entity instanceof EntityPlayer) {
             HomeInfo info = entity.getCapability(HomeProvider.HOME_INFO, null);
-            if (entity.getEntityWorld().getWorldType().getId() == info.getDim()){
+            System.out.println(entity.dimension + " " + info.getDim());
+            if (entity.dimension == info.getDim()){
                 if (info != null && info.isCreated()) {
                     if (entity.motionY >= -0.2 || ModConfig.teleportInFall) {
                         int time = 0;
@@ -187,6 +188,8 @@ public class HomeController {
                     }
                     entity.sendMessage(new TextComponentString("Use " + ways + " first").setStyle(new Style().setColor(TextFormatting.RED)));
                 }
+            } else {
+                entity.sendMessage(new TextComponentString("You can not teleport interdimensionally").setStyle(new Style().setColor(TextFormatting.RED)));
             }
         }
     }

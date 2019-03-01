@@ -21,5 +21,6 @@ public class HomeStorage implements Capability.IStorage<HomeInfo> {
     @Override
     public void readNBT(Capability<HomeInfo> capability, HomeInfo instance, EnumFacing side, NBTBase nbt) {
         instance.setHome(((NBTTagIntArray) nbt).getIntArray());
+        instance.setCreated(false);
     }
 }

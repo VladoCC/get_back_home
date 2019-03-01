@@ -4,11 +4,11 @@ package com.example.examplemod;
  * Created by Voyager on 06.05.2018.
  */
 public class HomeInfo {
-    int x;
-    int y;
-    int z;
-    int dim;
-    boolean created = false;
+    private int x;
+    private int y;
+    private int z;
+    private int dim;
+    private boolean created = false;
 
     public void setHome(int x, int y, int z, int dim){
         this.x = x;
@@ -47,7 +47,11 @@ public class HomeInfo {
         return created;
     }
 
+    public void setCreated(boolean created) {
+        this.created = created;
+    }
+
     public void removeHome(){
-        created = false;
+        setCreated(false);
     }
 }

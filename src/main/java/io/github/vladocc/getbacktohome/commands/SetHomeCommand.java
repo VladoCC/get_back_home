@@ -1,8 +1,10 @@
-package com.example.examplemod.commands;
+package io.github.vladocc.getbacktohome.commands;
 
+import io.github.vladocc.getbacktohome.HomeController;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 
@@ -11,24 +13,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Voyager on 07.05.2018.
+ * Created by Voyager on 06.05.2018.
  */
-public class DeleteHomeCommand implements ICommand {
+public class SetHomeCommand implements ICommand {
 
     ArrayList<String> allias = new ArrayList<>();
 
-    public DeleteHomeCommand() {
-        allias.add("removehome");
+    public SetHomeCommand() {
+        allias.add("sethome");
     }
 
     @Override
     public String getName() {
-        return "deletehome";
+        return "createhome";
     }
 
     @Override
     public String getUsage(ICommandSender sender) {
-        return "deletehome";
+        return "createhome";
     }
 
     @Override
@@ -38,7 +40,8 @@ public class DeleteHomeCommand implements ICommand {
 
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-
+        Entity entity = sender.getCommandSenderEntity();
+        HomeController.setHome(entity);
     }
 
     @Override

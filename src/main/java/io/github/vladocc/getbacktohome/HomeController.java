@@ -1,10 +1,8 @@
-package com.example.examplemod;
+package io.github.vladocc.getbacktohome;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +12,6 @@ import net.minecraft.util.text.TextFormatting;
 import squeek.applecore.api.food.FoodValues;
 import squeek.applecore.api_impl.AppleCoreAccessorMutatorImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

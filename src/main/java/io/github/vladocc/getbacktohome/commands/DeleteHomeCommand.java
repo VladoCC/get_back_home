@@ -1,40 +1,34 @@
-package com.example.examplemod.commands;
+package io.github.vladocc.getbacktohome.commands;
 
-import com.example.examplemod.HomeController;
-import com.example.examplemod.HomeInfo;
-import com.example.examplemod.HomeProvider;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Voyager on 06.05.2018.
+ * Created by Voyager on 07.05.2018.
  */
-public class MoveBackCommand implements ICommand {
+public class DeleteHomeCommand implements ICommand {
 
     ArrayList<String> allias = new ArrayList<>();
 
-    public MoveBackCommand() {
-        allias.add("back");
+    public DeleteHomeCommand() {
+        allias.add("removehome");
     }
 
     @Override
     public String getName() {
-        return "home";
+        return "deletehome";
     }
 
     @Override
     public String getUsage(ICommandSender sender) {
-        return "home";
+        return "deletehome";
     }
 
     @Override
@@ -44,8 +38,7 @@ public class MoveBackCommand implements ICommand {
 
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-        Entity entity = sender.getCommandSenderEntity();
-        HomeController.moveBackHome(entity);
+
     }
 
     @Override

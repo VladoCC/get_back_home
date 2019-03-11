@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package io.github.vladocc.getbacktohome;
 
 /**
  * Created by Voyager on 06.05.2018.

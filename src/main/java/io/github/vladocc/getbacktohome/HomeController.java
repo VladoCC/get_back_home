@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package io.github.vladocc.getbacktohome;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.IMob;
@@ -14,7 +14,6 @@ import net.minecraft.util.text.TextFormatting;
 import squeek.applecore.api.food.FoodValues;
 import squeek.applecore.api_impl.AppleCoreAccessorMutatorImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

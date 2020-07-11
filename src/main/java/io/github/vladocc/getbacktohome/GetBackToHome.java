@@ -1,8 +1,8 @@
-package com.example.examplemod;
+package io.github.vladocc.getbacktohome;
 
-import com.example.examplemod.commands.DeleteHomeCommand;
-import com.example.examplemod.commands.MoveBackCommand;
-import com.example.examplemod.commands.SetHomeCommand;
+import io.github.vladocc.getbacktohome.commands.DeleteHomeCommand;
+import io.github.vladocc.getbacktohome.commands.MoveBackCommand;
+import io.github.vladocc.getbacktohome.commands.SetHomeCommand;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.common.MinecraftForge;

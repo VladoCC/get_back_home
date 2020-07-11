@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package io.github.vladocc.getbacktohome;
 
 import net.minecraftforge.common.config.Config;
 

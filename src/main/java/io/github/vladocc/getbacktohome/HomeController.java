@@ -1,6 +1,6 @@
-package com.example.examplemod;
+package io.github.vladocc.getbacktohome;
 
-import com.example.examplemod.statements.*;
+import io.github.vladocc.getbacktohome.statements.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;

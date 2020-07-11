@@ -1,7 +1,7 @@
-package com.example.examplemod.statements;
+package io.github.vladocc.getbacktohome.statements;
 
-import com.example.examplemod.HomeInfo;
-import com.example.examplemod.HomeProvider;
+import io.github.vladocc.getbacktohome.HomeInfo;
+import io.github.vladocc.getbacktohome.HomeProvider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;

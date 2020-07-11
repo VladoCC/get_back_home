@@ -23,19 +23,10 @@ import java.util.concurrent.Callable;
 @Mod(modid = ModInfo.MODID, name = ModInfo.NAME, version = ModInfo.VERSION, dependencies = "required-after:applecore;after:spiceoflife;")
 public class GetBackToHome
 {
-    private static Logger logger;
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        logger = event.getModLog();
-
-        CapabilityManager.INSTANCE.register(HomeInfo.class, new HomeStorage(), new Callable<HomeInfo>() {
-            @Override
-            public HomeInfo call() throws Exception {
-                return new HomeInfo();
-            }
-        });
+        CapabilityManager.INSTANCE.register(HomeInfo.class, new HomeStorage(), HomeInfo::new);
 
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
         MinecraftForge.EVENT_BUS.register(this);
@@ -44,8 +35,6 @@ public class GetBackToHome
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
     @EventHandler

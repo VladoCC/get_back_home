@@ -20,8 +20,8 @@ public class ModConfig {
 
     @Config.Comment({"How you will pay for the way:",
             "   true - Your exhaustion will be automatically removed from your saturation and hunger bars.",
-            "       If you do not have enough of hunger, mod would it as much food from your toolbar as needed for teleportation.",
-            "       If you do not have enough food on toolbar, then you will not be teleported and no of your parameters will be changed",
+            "       If you do not have enough of hunger, mod would eat as much food from your toolbar as needed for teleportation.",
+            "       If you do not have enough food in toolbar, then you will not be teleported and your parameters will not be changed",
             "   false - Your teleportation to home is guaranteed, but you will be very exhausted.",
             "       Journey cost will be added to your vanilla exhaustion parameter",
             "Default: false"})
